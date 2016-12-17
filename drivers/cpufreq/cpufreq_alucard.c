@@ -36,7 +36,7 @@
 
 /* Tuning Interface */ 
 /*superdragonpt : Tune in for Jiayu S3*/
-#ifdef ARCH_MT6752
+#ifdef ARCH_MT6753
 #define FREQ_RESPONSIVENESS		1700000 /* Max Frequenc. of Jiayu s3*/
 #else
 #define FREQ_RESPONSIVENESS		1134000
