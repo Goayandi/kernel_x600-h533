@@ -1239,13 +1239,6 @@ static int BMI160_ACC_ReadSensorData(struct i2c_client *client, char *buf, int b
         *buf = 0;
         return -2;
     }
-
-    //shihaobin add for read calibration data when first enable sensor begin 20150330
-    if (0 == bmi160_acc_enable_flag)
-    {
-        bmi160_acc_enable_flag = 1;
-        yulong_acc_ReadCalibration(bmi160_acc_i2c_client);
-    }
     //shihaobin add for read calibration data when first enable sensor end 20150330
 
   if(sensor_power == FALSE)
@@ -2747,11 +2740,6 @@ static long bmi160_acc_unlocked_ioctl(struct file *file, unsigned int cmd, unsig
     switch(cmd)
     {
         //shihaobin add for do acc-sensor calibrate begin 20150330
-        case ACC_CALIBRATE:
-
-            err = BMI160_ACC_ResetCalibration(client);
-
-            yulong_accel_Calibration(client, strbuf, BMI160_BUFSIZE , 20, arg);
             //yulong_accel_Calibration(client, strbuf, BMI160_BUFSIZE , 20);
 
             break;

@@ -1771,13 +1771,6 @@ static int lsm6ds3_enable_nodata(int en)
         GSE_ERR("obj_i2c_data is NULL!\n");
         return -1;
     }
-
-    //shihaobin add for read calibration data when first enable sensor begin 20150330
-    if (0 == enable_flag)
-    {
-        enable_flag = 1;
-        yulong_acc_ReadCalibration(lsm6ds3_i2c_client);
-    }
     //shihaobin add for read calibration data when first enable sensor end 20150330
 
     if(value == 1)
@@ -2310,13 +2303,7 @@ static int yulong_accel_Calibration(struct i2c_client *client, char *buf, int bu
         __LINE__,tempbuf[0],tempbuf[1],tempbuf[2],tempbuf[3],tempbuf[4],tempbuf[5],tempbuf[6] );
     #endif
 
-    printk("yl_sensor_debug_write_acc_ps_cal_data  %s\n", __func__);
-    if(write_acc_ps_cal_data_to_flash(16, tempbuf, NAND_FLASH_WR_RD_SIZE)<0)
-        printk("Create ACC  calibration file error!!");
-        else
-        printk("Create ACC  calibration file Success!!");
-
-    return ret;
+        return ret;
 }
 
 

@@ -20,8 +20,8 @@ obj-y   +=  keypad/
 obj-y   +=  accdet/
 
 ifeq ($(CONFIG_MTK_SENSOR_SUPPORT),y)
-ifeq ($(CONFIG_MTK_CM36652_NEW),y)
-obj-y	+=  alsps/cm36652-new/
+ifeq ($(CONFIG_MTK_STK3X1X_NEW),y)
+obj-y	+=  alsps/stk3x1x-new/
 endif
 
 ifeq ($(CONFIG_MTK_MC3410_NEW),y)
