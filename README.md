@@ -6,7 +6,7 @@
 	1) Extract the kernel where ever you want.
 	2) Open the terminal in extracted kernel directory
 	3) Edit the toolchain path in start.sh
-	4) Type . start.sh in terminal and press enter
+	4) Type ./start.sh in terminal and press enter
 	5) After it completes compiling, you will get an image.gz-dtb in arch/arm64/boot
 	6) There ends the kernel building.
 
@@ -28,10 +28,11 @@
 - ril, baseband
 - Wifi & bluetooth is functional
 - lcm ( hx8394d_hd720_dsi_vdo_tianma )
-- alsps ( stk3x1x-new )
-- touch ( gt9xx_hotknot )
+- alsps ( stk3x1x-new[i2c 2-0048] )
+- touch ( gt9xx_hotknot[i2c 1-005d] )
 - flash ( Q823MB )
 - pmic ( mt6311[i2c 4-006b] )
+- sound from headshet functional
 
 <h3>Known Issues :<h3>
 - Display is non-functional after phone wake up (showing white screen with sripe in the middle screen)
